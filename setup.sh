@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-ln -s ~/.vimrc $(pwd)/vimrc
+repo_path=$(realpath `dirname $0`)
+ln -s $repo_path/vimrc ~/.vimrc
