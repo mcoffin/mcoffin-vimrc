@@ -1,16 +1,17 @@
-call pathogen#infect()
+" Load vim 8.0 defaults
+runtime! defaults.vim
+
+" Setup vundle
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+call vundle#end()
+
+filetype plugin indent on
 
 set rtp+=$GOROOT/misc/vim
 
 if has("syntax")
 	syntax on
 endif
-
-filetype plugin indent on
-
-" Automatically close if the only thing left is my NERD tree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" Automatically open NERDTree if no buffers
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
