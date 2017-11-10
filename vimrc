@@ -6,7 +6,9 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'git://github.com/neovimhaskell/haskell-vim.git'
 call vundle#end()
+filetype on
 
 filetype plugin indent on
 
