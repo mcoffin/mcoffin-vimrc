@@ -7,6 +7,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'git://github.com/neovimhaskell/haskell-vim.git'
+Plugin 'git://github.com/cespare/vim-toml.git'
 call vundle#end()
 filetype on
 
