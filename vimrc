@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'git://github.com/neovimhaskell/haskell-vim.git'
 Plugin 'git://github.com/cespare/vim-toml.git'
+Plugin 'git://github.com/KoffeinFlummi/vim-sqf.git'
 call vundle#end()
 filetype on
 
