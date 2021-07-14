@@ -10,6 +10,10 @@ Plugin 'git://github.com/neovimhaskell/haskell-vim.git'
 Plugin 'git://github.com/cespare/vim-toml.git'
 Plugin 'git://github.com/KoffeinFlummi/vim-sqf.git'
 Plugin 'git://github.com/hashivim/vim-terraform.git'
+Plugin 'git://github.com/vmchale/dhall-vim.git'
+Plugin 'https://tildegit.org/sloum/gemini-vim-syntax.git'
+Plugin 'git://github.com/jparise/vim-graphql.git'
+Bundle 'git://github.com/daylerees/colour-schemes.git', { "rtp": "vim/" }
 call vundle#end()
 filetype on
 
@@ -20,3 +24,11 @@ set rtp+=$GOROOT/misc/vim
 if has("syntax")
 	syntax on
 endif
+
+command! RetabIndents call RetabIndents()
+
+func! RetabIndents()
+	let saved_view = winsaveview()
+	execute '%s@^\( \{'.&ts.'}\)\+@\=repeat("\t", len(submatch(0))/'.&ts.')@'
+	call winrestview(saved_view)
+endfunc
